@@ -3,9 +3,11 @@ import Congrats from './Congrats';
 import { shallow } from 'enzyme';
 import checkPropTypes from 'check-prop-types';
 
+const defaultProps = {success: false};
 
 const setup = (props={}) => {
-  return shallow(<Congrats {...props} />);
+  const setupProps = {...defaultProps, ...props};
+  return shallow(<Congrats {...setupProps} />);
 };
 
 test('renders without crashing', () => {
@@ -14,7 +16,7 @@ test('renders without crashing', () => {
 });
 
 test('renders no text when `success` prop is false', () => {
-  const wrapper = setup({success: false})
+  const wrapper = setup();
   expect(wrapper.find('.congrats').text()).toBe('');
 });
 
