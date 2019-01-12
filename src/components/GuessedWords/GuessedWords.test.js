@@ -39,11 +39,28 @@ describe('<GuessedWord />', () => {
 
   });
 
-  describe('if no words are guessed', () => {
+  describe('if words are guessed', () => {
+    let wrapper;
+
+    const props = {
+      guessedWords: [
+        {guessedWord: 'caddy', letterMatchCount: 4},
+        {guessedWord: 'chevy', letterMatchCount: 5},
+        {guessedWord: 'nissan', letterMatchCount: 6},
+      ]
+    };
+
+    beforeEach(() => {
+      wrapper = setup(props);
+    });
 
     test('renders current game activity', () => {
-      const wrapper = setup();
       expect(wrapper.find('.current-game-activity').exists()).toBe(true);
+    });
+
+    test('has correct number of guessed words', () => {
+      const guessedWordNodes = wrapper.find('.guessed-word');
+      expect(guessedWordNodes.length).toBe(props.guessedWords.length);
     });
 
   });
