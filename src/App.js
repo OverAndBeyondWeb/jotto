@@ -7,9 +7,9 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="App container">
       <h1>Welcome to Jotto</h1>
-        <Congrats success={false} />
+        <Congrats success={true} />
         <GuessedWords guessedWords={[{guessedWord: 'five', letterMatchCount: 5}]}/>
       </div>
     );

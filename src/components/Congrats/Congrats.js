@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const congratsMessage = <span className="congrats-message">Congratulations! you guessed correctly</span>;
 
 const Congrats = (props) => (
-  <div className="congrats">
+  <div className="congrats alert alert-success">
     {props.success ? congratsMessage : null}
   </div>
 );

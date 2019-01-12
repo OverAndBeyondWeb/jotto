@@ -11,7 +11,7 @@ const GuessedWords = props => {
   const activity = (
     <div className="current-game-activity">
       <h3>Guessed Words</h3>
-      <table>
+      <table className="table table-sm">
         <thead>
           <tr>
             <th>Guess</th>
@@ -21,7 +21,7 @@ const GuessedWords = props => {
         <tbody>
           {props.guessedWords.map(word => (
             <tr className="guessed-word" key={word}>
-              <th>
+              <th classname="thead-light">
                 {word.guessedWord}
               </th>
               <th>
